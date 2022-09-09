@@ -7,6 +7,7 @@ import StreamEdit from "./streams/StreamEdit";
 import StreamDelete from "./streams/StreamDelete";
 import StreamList from "./streams/StreamList";
 import StreamShow from "./streams/StreamShow";
+import Header from "./Header";
 
 //#region Router Theory
 // const PageOne = () => {
@@ -31,8 +32,8 @@ import StreamShow from "./streams/StreamShow";
 
 const App = () => {
   return (
-    <div>
-      <h1>Header</h1>
+    <div className="ui container">
+      <Header />
       <BrowserRouter>
           {/* Router Theory
           <Route path="/" exact component={PageOne} />
