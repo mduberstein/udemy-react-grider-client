@@ -32,6 +32,7 @@ import StreamShow from "./streams/StreamShow";
 const App = () => {
   return (
     <div>
+      <h1>Header</h1>
       <BrowserRouter>
           {/* Router Theory
           <Route path="/" exact component={PageOne} />
