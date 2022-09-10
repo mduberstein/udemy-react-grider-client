@@ -33,11 +33,11 @@ import Header from "./Header";
 const App = () => {
   return (
     <div className="ui container">
-      <Header />
       <BrowserRouter>
           {/* Router Theory
           <Route path="/" exact component={PageOne} />
           <Route path="/pagetwo" component={PageTwo} /> */}
+          <Header />
           <Route path="/" exact component={StreamList} />
           <Route path="/streams/new" exact component={StreamCreate} />
           <Route path="/streams/edit" exact component={StreamEdit} />
