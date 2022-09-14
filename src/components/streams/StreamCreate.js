@@ -2,12 +2,14 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 
 class StreamCreate extends React.Component {
-  renderInput({input, label}) {
-    console.log("form input props:", input);
+  renderInput({input, label, meta}) {
+    // console.log("form input props:", input);
+    console.log("meta ", meta);
     return (
       <div className="field">
         <label>{label}</label>
         <input {...input} />
+        <div>{meta.error}</div>
       </div>
     );
   }
@@ -21,7 +23,7 @@ class StreamCreate extends React.Component {
   }
 
   render() {
-    console.log("Props introduced with reduxForm", this.props);
+    // console.log("Props introduced with reduxForm", this.props);
     return (
       // handleSubmit calls event.preventDefault(), so our onSubmit doesn't have to
       // also the onSubmit is called not with the event arguent, 
@@ -48,4 +50,5 @@ const validate = (formValues) => {
 
 export default reduxForm({
   form: "streamCreate",
+  validate
 })(StreamCreate);
