@@ -30,7 +30,6 @@ class StreamForm extends React.Component {
   //   event.preventDefault();
   // }
   onSubmit = (formValues) =>  {
-    console.log("formValues in onSubmit", formValues);
     this.props.onSubmit(formValues);
   }
 

@@ -9,7 +9,7 @@ class StreamCreate extends React.Component {
   //   event.preventDefault();
   // }
   onSubmit = (formValues) =>  {
-    console.log("formValues in onSubmit", formValues);
+    console.log("In StreamCreate, onSubmit, formValues: ", formValues);
     this.props.createStream(formValues);
   }
 
