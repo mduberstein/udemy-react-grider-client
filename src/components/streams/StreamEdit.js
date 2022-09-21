@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchStream, editStream} from '../../actions/index';
 import StreamForm from './StreamForm';
+import _ from "lodash";
 
 // const StreamEdit = (props) => {
 //   console.log("SreamEdit props: ", props) 
@@ -24,9 +25,12 @@ class StreamEdit  extends React.Component {
       <div>
         <h3>Edit a Stream</h3>
         <StreamForm 
-          // ALT 2 short and correct
-          initialValues={this.props.stream}
-          // ALT1 illustrative, works as well
+          // ALT 3
+          initialValues={_.pick(this.props.stream, 'title', 'description')}
+          // ALT 2 short, but incorrect
+          // works in this project, but wrong as it passes redundant fields into formValues: id and userId
+          // initialValues={this.props.stream} 
+          // ALT1 correct
           // initialValues={{
           //   title: this.props.stream.title,
           //   description: this.props.stream.description
