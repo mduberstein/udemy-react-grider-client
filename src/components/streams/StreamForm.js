@@ -14,7 +14,7 @@ class StreamForm extends React.Component {
 
   renderInput = ({ input, label, meta }) => {
     // console.log("form input props:", input);
-    console.log("meta ", meta);
+    console.log("In SreamForm, renderInput, meta ", meta);
     const className = `field ${meta.error && meta.touched ? 'error': ''}`
     return (
       <div className={className}>
