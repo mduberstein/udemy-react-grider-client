@@ -23,6 +23,14 @@ class StreamShow extends React.Component {
     this.buildPlayer();
   }
 
+  componentWillUnmount() {
+    console.log("In StreamShow->componentWillUnmount: I was  unmounted");
+    // is called when the component is no longer displayed, i.e. is navigated away from, tells the flv player 
+    // 1. to stop trying to receive a video stream and play it
+    // 2. to detach itself from the <video> element pointed to by the this.videoRef
+    this.player.destroy();
+  }
+
   buildPlayer() {
     const {id} = this.props.match.params;
     if (this.player || !this.props.stream) {
