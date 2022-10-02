@@ -12,6 +12,22 @@ class StreamShow extends React.Component {
   componentDidMount() {
     const {id} = this.props.match.params;
     this.props.fetchStream(id);
+    console.log('in ShowStream->componentDidMountthis.videoRef :', this.videoRef)
+    // here, the Video player would not be displayed
+    this.buildPlayer();
+  }
+
+  // this will be called when the stream was fetched and thus the Redux state update would 
+  // cause this lifecycle method call and the Video Player display
+  componentDidUpdate() {
+    this.buildPlayer();
+  }
+
+  buildPlayer() {
+    const {id} = this.props.match.params;
+    if (this.player || !this.props.stream) {
+      return; 
+    }
     this.player = flv.createPlayer({
       type: 'flv',
       url: `http://localhost:8000/live/${id}.flv`
